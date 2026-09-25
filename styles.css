@@ -5,7 +5,7 @@
 }
 
 /* Animation Container Fix */
-.animation-container {
+.animation-container {Inter
     position: absolute;
     top: 0;
     left: 0;
@@ -58,7 +58,7 @@
     text-decoration: none;
     color: #FFFFFF;
     font-size: 14px;
-    font-family: 'Sansation';
+    font-family: 'Inter';
     font-weight: 400;
     transition: opacity 0.3s;
 }
@@ -77,7 +77,7 @@ html {
 }
 
 body {
-    font-family: 'Sansation', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 400;
     background: linear-gradient(
         to bottom,
@@ -129,7 +129,7 @@ main {
 
 .hero-description {
     margin: 40px auto 0;
-    font-family: 'Sansation';
+    font-family: 'Inter';
     font-weight: 300;
     font-size: 18px;
     max-width: 710px;
@@ -208,7 +208,7 @@ main {
 }
 
 .section-title {
-    font-family: 'Sansation';
+    font-family: 'Inter';
     font-weight: 700;
     font-size: 32px;
     color: #EBEBEB;
@@ -334,14 +334,14 @@ main {
 
 .project-title {
     color: #EBEBEB;
-    font-family: 'Sansation';
+    font-family: 'Inter';
     font-weight: 700;
     font-size: 24px;
 }
 
 .project-text {
     margin-top: 25px;
-    font-family: 'Sansation';
+    font-family: 'Inter';
     font-weight: 300;
     font-size: 16px;
     line-height: 26px;
@@ -360,7 +360,7 @@ main {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    font-family: 'Sansation';
+    font-family: 'Inter';
     font-weight: 700;
     font-size: 14px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -393,7 +393,7 @@ main {
 
 .more-works-title {
     margin-top: 72px;
-    font-family: 'Sansation';
+    font-family: 'Inter';
     font-weight: 400;
     font-size: 26px;
     color: #FFFFFF;
@@ -482,7 +482,7 @@ main {
 }
 
 .hello-world {
-    font-family: 'Sansation';
+    font-family: 'Inter';
     font-weight: 400;
     font-size: 28px;
     margin-bottom: 50px;
@@ -490,7 +490,7 @@ main {
 }
 
 .about-text {
-    font-family: 'Sansation';
+    font-family: 'Inter';
     font-weight: 300;
     font-size: 20px;
     line-height: 30px;
@@ -541,7 +541,7 @@ main {
 .social-link span {
     font-size: 14px;
     font-weight: 300;
-    font-family: 'Sansation';
+    font-family: 'Inter';
     color: #FFFFFF;
 }
 
@@ -560,7 +560,7 @@ main {
 }
 
 .copyright {
-    font-family: 'Sansation';
+    font-family: 'Inter';
     font-size: 16px;
     font-weight: 400;
     color: #FFFFFF;
