@@ -169,7 +169,7 @@ main {
 }
 
 .section-title {
-    font-family: 'var(--font-heading)';
+    font-family: var(--font-heading);
     font-weight: 700;
     font-size: 32px;
     color: #EBEBEB;
@@ -295,14 +295,14 @@ main {
 
 .project-title {
     color: #EBEBEB;
-    font-family: 'var(--font-heading)';
+    font-family: var(--font-heading);
     font-weight: 700;
     font-size: 24px;
 }
 
 .project-text {
     margin-top: 25px;
-    font-family: 'var(--font-heading)';
+    font-family: var(--font-body);
     font-weight: 300;
     font-size: 16px;
     line-height: 26px;
@@ -321,7 +321,7 @@ main {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    font-family: 'var(--font-heading)';
+    font-family: var(--font-body);
     font-weight: 700;
     font-size: 14px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -354,7 +354,7 @@ main {
 
 .more-works-title {
     margin-top: 72px;
-    font-family: 'var(--font-heading)';
+    font-family: var(--font-heading);
     font-weight: 400;
     font-size: 26px;
     color: #FFFFFF;
@@ -443,7 +443,7 @@ main {
 }
 
 .hello-world {
-    font-family: 'var(--font-heading)';
+    font-family: var(--font-heading);
     font-weight: 400;
     font-size: 28px;
     margin-bottom: 50px;
@@ -451,7 +451,7 @@ main {
 }
 
 .about-text {
-    font-family: 'var(--font-heading)';
+    font-family: var(--font-body);
     font-weight: 300;
     font-size: 20px;
     line-height: 30px;
@@ -502,7 +502,7 @@ main {
 .social-link span {
     font-size: 14px;
     font-weight: 300;
-    font-family: 'var(--font-heading)';
+    font-family: var(--font-body);
     color: #FFFFFF;
 }
 
@@ -521,7 +521,7 @@ main {
 }
 
 .copyright {
-    font-family: 'var(--font-heading)';
+    font-family: var(--font-body);
     font-size: 16px;
     font-weight: 400;
     color: #FFFFFF;
