@@ -3,14 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
- 
+
 :root {
     --font-heading: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-
-/* Navbar */
 .navbar {
     position: fixed;
     top: 10px;
@@ -24,52 +22,29 @@
     z-index: 1000;
     transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
 }
-
-.navbar.nav-hidden {
-    transform: translateX(-50%) translateY(-120%);
-}
-
-.navbar.nav-top {
-    background-color: transparent;
-}
-
-.navbar:not(.nav-top) {
-    background-color: rgba(255, 255, 255, 0.04);
-}
-
+.navbar.nav-hidden { transform: translateX(-50%) translateY(-120%); }
+.navbar.nav-top { background-color: transparent; }
+.navbar:not(.nav-top) { background-color: rgba(255, 255, 255, 0.04); }
 .navbar a {
     text-decoration: none;
     color: #FFFFFF;
+    font-family: var(--font-body);
     font-size: 14px;
-    font-family: 'var(--font-heading)';
     font-weight: 400;
     transition: opacity 0.3s;
 }
+.navbar a:hover { opacity: 0.7; }
 
-.navbar a:hover {
-    opacity: 0.7;
-}
+html { scroll-behavior: smooth; }
+#publications, #projects, #about { scroll-margin-top: 100px; }
 
-/* Base Styles */
-html {
-    scroll-behavior: smooth;
-}
-
-#publications, #projects, #about {
-    scroll-margin-top: 100px;
-}
-
-var(--font-body) {
-    font-family: 'var(--font-heading)', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+body {
+    font-family: var(--font-body);
     font-weight: 400;
     background: linear-gradient(
         to bottom,
-        #030814 23%,
-        #07090D 36%,
-        #060910 41%,
-        #001F3E 60%,
-        #001A31 82%,
-        #000E1A 100%
+        #030814 23%, #07090D 36%, #060910 41%,
+        #001F3E 60%, #001A31 82%, #000E1A 100%
     );
     color: #FFFFFF;
 }
@@ -81,7 +56,6 @@ main {
     padding: 0;
 }
 
-/* Hero Section */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -91,56 +65,50 @@ main {
     justify-content: flex-start;
     background-color: #02060c;
 }
-
 .hero-section #bg {
     position: absolute;
     top: 0;
     right: 0;
-    width: 55%;
+    width: 60%;
     height: 100%;
     z-index: 0;
     filter: blur(1.2px);
 }
-
 .hero-text-panel {
     position: relative;
     z-index: 2;
-    width: 50%;
-    padding-left: 110px;
-    padding-right: 40px;
+    width: 55%;
+    padding-left: 100px;
+    padding-right: 30px;
 }
-
 .hero-heading-text {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 60px;
-    line-height: 1.12;
+    font-size: 54px;
+    line-height: 1.15;
     letter-spacing: -0.01em;
     color: #FFFFFF;
-    margin: 0;
+    margin: 0 0 28px 0;
 }
-
 .hero-description-panel {
     display: inline-block;
-    margin-top: 35px;
-    padding: 22px 26px;
+    padding: 20px 24px;
+    margin-left: -24px;
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 18px;
     backdrop-filter: blur(8px);
 }
-
 .hero-description {
     font-family: var(--font-body);
     font-weight: 300;
     font-size: 17px;
     line-height: 30px;
-    max-width: 460px;
+    max-width: 520px;
     letter-spacing: 0.02em;
     color: #F2F2F2;
     text-align: left;
     margin: 0;
 }
-
 .scroll-indicator {
     position: absolute;
     bottom: 60px;
@@ -153,7 +121,6 @@ main {
     background: none;
     border: none;
 }
-
 .hover-circle {
     position: absolute;
     width: 60px;
@@ -167,12 +134,10 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
 .scroll-indicator:hover .hover-circle {
     opacity: 1;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
-
 .scroll-indicator .arrow-down {
     position: absolute;
     top: 50%;
@@ -184,19 +149,11 @@ main {
     stroke-width: 2.5;
     fill: none;
 }
-
 @keyframes bounceDown {
-    0%, 100% {
-        transform: translate(-50%, -50%);
-    }
-    50% {
-        transform: translate(-50%, -25%);
-    }
-    75% {
-        transform: translate(-50%, -45%);
-    }
+    0%, 100% { transform: translate(-50%, -50%); }
+    50% { transform: translate(-50%, -25%); }
+    75% { transform: translate(-50%, -45%); }
 }
-
 .scroll-indicator .arrow-down {
     animation: bounceDown 1s ease-in-out infinite;
 }
