@@ -542,6 +542,24 @@ main {
     padding-bottom: 60px;
 }
 
+/* Glass effect */
+.pub-card,
+.project-bg {
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    backdrop-filter: blur(14px) saturate(140%);
+}
+
+.pub-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.09), rgba(0,125,255,0.05));
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.project-row:nth-of-type(1) .project-bg { background-color: rgba(255,255,255,0.04); }
+.project-row:nth-of-type(2) .project-bg { background-color: rgba(120,190,255,0.06); }
+.project-row:nth-of-type(3) .project-bg { background-color: rgba(255,255,255,0.05); }
+
+
+
 /* ====================
    MOBILE RESPONSIVE STYLES
    ==================== */
