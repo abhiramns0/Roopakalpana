@@ -273,9 +273,9 @@ main {
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
 }
 
-.project-row:nth-of-type(1) .project-bg { background-color: rgba(0, 20, 45, 0.75); }
+.project-row:nth-of-type(1) .project-bg { background-color: rgba(0, 20, 45, 0.85); }
 .project-row:nth-of-type(2) .project-bg { background-color: rgba(10, 60, 115, 0.35); }
-.project-row:nth-of-type(3) .project-bg { background-color: rgba(20, 90, 170, 0.22); }
+.project-row:nth-of-type(3) .project-bg { background-color: rgba(20, 90, 170, 0.18); }
 
 .project-left .project-media {
     flex: 0 0 800px;
@@ -555,7 +555,7 @@ main {
 }
 
 .project-row:nth-of-type(1) .project-bg { background-color: rgba(255,255,255,0.04); }
-.project-row:nth-of-type(2) .project-bg { background-color: rgba(120,190,255,0.06); }
+.project-row:nth-of-type(2) .project-bg { background-color: rgba(255,255,255,0.05); }
 .project-row:nth-of-type(3) .project-bg { background-color: rgba(255,255,255,0.05); }
 
 
