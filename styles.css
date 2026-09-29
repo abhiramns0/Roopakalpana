@@ -279,9 +279,9 @@ main {
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
 }
 
-.project-row:nth-of-type(1) .project-bg { background-color: rgba(0, 0, 0, 0); }
+.project-row:nth-of-type(1) .project-bg { background-color: rgba(255, 255, 255, 1); }
 .project-row:nth-of-type(2) .project-bg { background-color: rgba(10, 60, 115, 0.35); }
-.project-row:nth-of-type(3) .project-bg { background-color: rgba(20, 90, 170, 0.18); }
+.project-row:nth-of-type(3) .project-bg { background-color: rgba(0, 0, 0, 0); }
 
 .project-left .project-media {
     flex: 0 0 800px;
@@ -575,12 +575,13 @@ main {
     box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
+/*
 .project-btn {
-    position: relative;      /* anchors the gradient stroke */
-    border: none;            /* the ::before stroke replaces the old border */
+    position: relative;     
+    border: none;            
     background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(0,125,255,0.08));
     box-shadow: 0 4px 16px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.1);
-}
+} */
 
 /* ====================
    MOBILE RESPONSIVE STYLES
