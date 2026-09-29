@@ -180,7 +180,10 @@ main {
 .pub-card {
     width: 100%;
     height: 100px;
-    background-color: rgba(0, 125, 255, 0.04);
+    
+    background: linear-gradient(135deg, rgba(0,125,255,0.12), rgba(0,125,255,0.05));
+    position: relative;
+    
     border-radius: 35px;
     display: flex;
     align-items: center;
@@ -194,6 +197,24 @@ main {
 
 .pub-card:hover {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradient stroke (shared by pub cards and project cards) */
+.pub-card::before,
+.project-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px; /* stroke thickness */
+    background: linear-gradient(135deg,
+        rgba(130,195,255,0.45),
+        rgba(0,125,255,0.06) 55%,
+        rgba(130,195,255,0.25));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
 }
 
 .pub-title {
@@ -252,17 +273,9 @@ main {
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
 }
 
-.project-row:nth-child(1) .project-bg {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.project-row:nth-child(2) .project-bg {
-    background-color: rgba(1, 29, 59, 0.32);
-}
-
-.project-row:nth-child(3) .project-bg {
-    background-color: rgba(0, 78, 159, 0.07);
-}
+.project-row:nth-of-type(1) .project-bg { background-color: rgba(0, 20, 45, 0.75); }
+.project-row:nth-of-type(2) .project-bg { background-color: rgba(10, 60, 115, 0.35); }
+.project-row:nth-of-type(3) .project-bg { background-color: rgba(20, 90, 170, 0.22); }
 
 .project-left .project-media {
     flex: 0 0 800px;
