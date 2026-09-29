@@ -201,7 +201,9 @@ main {
 
 /* Gradient stroke (shared by pub cards and project cards) */
 .pub-card::before,
-.project-bg::before {
+.project-bg::before,
+.more-works::before,
+.project-btn::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -215,6 +217,10 @@ main {
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
+}
+
+.project-bg::before {
+    padding: 1px 0;
 }
 
 .pub-title {
@@ -273,7 +279,7 @@ main {
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
 }
 
-.project-row:nth-of-type(1) .project-bg { background-color: rgba(0, 20, 45, 0.85); }
+.project-row:nth-of-type(1) .project-bg { background-color: rgba(0, 0, 0, 0); }
 .project-row:nth-of-type(2) .project-bg { background-color: rgba(10, 60, 115, 0.35); }
 .project-row:nth-of-type(3) .project-bg { background-color: rgba(20, 90, 170, 0.18); }
 
@@ -558,7 +564,23 @@ main {
 .project-row:nth-of-type(2) .project-bg { background-color: rgba(255,255,255,0.05); }
 .project-row:nth-of-type(3) .project-bg { background-color: rgba(255,255,255,0.05); }
 
+.more-works,
+.project-btn {
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    backdrop-filter: blur(14px) saturate(140%);
+}
 
+.more-works {
+    background: linear-gradient(135deg, rgba(255,255,255,0.09), rgba(0,125,255,0.05));
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.project-btn {
+    position: relative;      /* anchors the gradient stroke */
+    border: none;            /* the ::before stroke replaces the old border */
+    background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(0,125,255,0.08));
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.1);
+}
 
 /* ====================
    MOBILE RESPONSIVE STYLES
@@ -635,6 +657,11 @@ main {
         gap: 15px;
         position: relative; /* Added to anchor absolute icon */
     }
+
+.project-bg::before {
+    padding: 1px;
+}
+    
     .pub-title {
         font-size: 16px;
         text-align: left;
