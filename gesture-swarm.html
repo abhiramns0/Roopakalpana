@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gesture-Based Drone Swarm Control in VR | Abhiram N S</title>
+  <meta name="description" content="End-to-end design of a VR interface for commanding drone swarms with natural hand gestures." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="gesture-swarm.css" />
+</head>
+<body>
+
+  <a class="back" href="index.html#projects">&larr; Back to portfolio</a>
+
+  <main>
+
+    <!-- HERO -->
+    <header class="hero">
+      <p class="eyebrow">Case study &middot; HCI &middot; VR</p>
+      <h1>Gesture-Based Drone Swarm Control in VR</h1>
+      <p class="subtitle">Gesture library and detailed interactions</p>
+      <p class="lead">
+        An end-to-end design of a virtual reality interface that lets users command and coordinate a swarm of drones through natural hand gestures. Starting with an elicitation study to capture intuitive gesture metaphors, I crafted a robust gesture library and iteratively prototyped the VR environment in Unity. Rigorous user testing informed refinements in interaction mechanics and feedback visuals, resulting in a seamless, immersive control system that improves task efficiency and user engagement.
+      </p>
+      <img class="shot wide" src="images/swarm/hero.jpg" alt="Rescue drones flying over a disaster site" />
+    </header>
+
+    <!-- RESEARCH -->
+    <section>
+      <h2>Research</h2>
+      <div class="grid two">
+        <div class="card">
+          <p>Gesture-based interfaces have gained significant attention due to their potential to simplify the complexities of swarm control.</p>
+          <p>A variety of approaches have been explored, yet gaps remain in creating a standardized and user-centered gesture library suitable for diverse and dynamic application areas.</p>
+          <p><a class="link" href="#" target="_blank" rel="noopener">Scenario video</a></p>
+        </div>
+        <div class="card">
+          <h3>Previous works</h3>
+          <p>These works reinforce the need for intuitive interfaces but often rely on predefined gesture sets, limiting their adaptability across broader contexts.</p>
+          <p>The need for a standardized gesture library is evident. Octavian et al. (2023) also point to a lack of systematic efforts to develop a universal and adaptable gesture set &mdash; a gap this project aims to address.</p>
+        </div>
+      </div>
+      <img class="shot wide" src="images/swarm/previous-works.png" alt="Papers reviewed on gesture-based swarm control" />
+    </section>
+
+    <!-- AERIAL SWARM -->
+    <section>
+      <h2>Aerial swarm</h2>
+      <div class="grid two">
+        <div>
+          <p>Schranz et al. (2020) catalogue swarm robotic applications and behaviors across terrestrial, aerial and aquatic environments. Aerial swarms are difficult to test in real settings, which makes VR a good research bed.</p>
+          <figure><img class="shot" src="images/swarm/aerial-table.png" alt="Table of swarm applications and behaviors" />
+          <figcaption>Aerial applications: military and search-and-rescue operations.</figcaption></figure>
+          <p><strong>Basic swarm behaviors:</strong> pattern formation, collective exploration, coordinated motion, task allocation and aggregation.</p>
+        </div>
+        <div>
+          <h3>Swarm control architecture</h3>
+          <figure><img class="shot" src="images/swarm/architecture.png" alt="Three-layer swarm control architecture" /></figure>
+          <p><strong>Execution:</strong> low-level flight control such as collision avoidance and velocity regulation, <strong>which our system automates to offload operator burden.</strong></p>
+          <p><strong>Coordination:</strong> high-level grouping and task assignment.<br>
+             <strong>Decision-making:</strong> path planning and formation commands.</p>
+          <p class="source">Source: Schranz et al., Front. Robot. AI 7, 36 (2020)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GROUNDWORK + ELICITATION -->
+    <section>
+      <h2>Groundwork</h2>
+      <div class="grid two">
+        <div>
+          <p>To check feasibility, I created two gestures in Unity and made a small game in the VR course. Players control drone formations with gestures to avoid obstacles.</p>
+          <p><a class="link" href="#" target="_blank" rel="noopener">Link to in-game footage</a></p>
+        </div>
+        <figure><img class="shot" src="images/swarm/groundwork-game.png" alt="Screenshot of the VR obstacle game with drones in circle formation" />
+        <figcaption>Screenshot from the game</figcaption></figure>
+      </div>
+
+      <h2>Elicitation study</h2>
+      <div class="grid two">
+        <div>
+          <p>Insights came from military personnel and people working in rescue areas: reconnaissance, grenade drop, evacuation, post-disaster surveillance and more.</p>
+          <p>Considering real-life scenarios in both application areas, 18 actions were selected for the study.</p>
+          <figure><img class="shot" src="images/swarm/elicitation.png" alt="Participant performing a gesture next to the screen recording" />
+          <figcaption>User performing a gesture, and the screen recording of the same gesture</figcaption></figure>
+        </div>
+        <figure><img class="shot" src="images/swarm/selected-actions.png" alt="The 18 selected actions grouped by category" />
+        <figcaption>Selected actions</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- GESTURE LIBRARY -->
+    <section>
+      <h2>Gesture library</h2>
+      <div class="grid two">
+        <div>
+          <p>The data collected from the recordings was systematically analyzed to compile a complete list of all gestures suggested by participants, then extracted and categorized.</p>
+          <p class="tags"><span>Static or moving</span><span>Number of hands</span><span>Number of fingers</span><span>Distinctiveness</span><span>Repetition frequency</span></p>
+
+          <h3>Research bed</h3>
+          <p>The setup built in Unity VR can be used for further studies in aerial swarm control through gestures. More studies can expand the library and test it in VR, gaining insights without the losses of real-world testing.</p>
+          <figure><img class="shot" src="images/swarm/hand-tracking.png" alt="Hand tracking components in Unity" />
+          <figcaption>Different components in hand tracking</figcaption></figure>
+        </div>
+        <figure><img class="shot" src="images/swarm/gesture-guide.png" alt="Gesture guide for formation control and path planning" />
+        <figcaption>Gesture guide</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- REFINING -->
+    <section>
+      <h2>Refining the prototype</h2>
+      <div class="grid two">
+        <div class="card">
+          <ul>
+            <li>Need robust 3D selection for task assignment</li>
+            <li>Cohesive UI for real-world missions</li>
+            <li>Scenario-specific interaction requirements</li>
+          </ul>
+          <h3>Key interaction challenge: 3D selection and grouping</h3>
+          <ul>
+            <li>Depth, occlusion and scale</li>
+            <li>6-DOF complexity vs. a 2D click</li>
+            <li>Foundation for grouping and mission tasks</li>
+            <li>Active research area in VR selection</li>
+          </ul>
+          <p><strong>Left hand decides the group, right hand activates the selection.</strong></p>
+        </div>
+        <div>
+          <img class="shot" src="images/swarm/campus-map.png" alt="Hand selecting waypoints on a 3D campus map" />
+          <p>Campus building 3D map with waypoint selection by drawing or pinching. Users select locations on the 3D map and the drones navigate to those points.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SELECTION TECHNIQUES -->
+    <section>
+      <h2>Selection techniques</h2>
+      <div class="grid three">
+        <figure class="card">
+          <img class="shot" src="images/swarm/select-direct.png" alt="Direct touch selection" />
+          <h3>Direct touch</h3>
+          <p>Tap individual drones while holding the gesture. Best for precise, small-group assignments.</p>
+        </figure>
+        <figure class="card">
+          <img class="shot" src="images/swarm/select-sphere.png" alt="Sphere select" />
+          <h3>Sphere select</h3>
+          <p>Grab and scale a virtual sphere to bulk-select. Ideal for medium-sized groups.</p>
+        </figure>
+        <figure class="card">
+          <img class="shot" src="images/swarm/select-cube.png" alt="Cube generation" />
+          <h3>Cube generation</h3>
+          <p>Generates a cube while the finger holds the gesture. Ideal for fast selection.</p>
+        </figure>
+      </div>
+
+      <h2>HUD explorations</h2>
+      <div class="grid two">
+        <div>
+          <p>Toggleable 2D panels in VR, with orthographic and X-ray top-down maps.</p>
+        </div>
+        <figure><img class="shot" src="images/swarm/hud.png" alt="VR HUD showing navigation and group status" />
+        <figcaption>UI in VR showing navigation and group status</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- FINAL PROTOTYPE -->
+    <section>
+      <h2>Final prototype</h2>
+      <p class="lead">
+        A fully interactive VR interface overlays a 3D terrain map and building X-ray vision, enabling operators to visualize structural interiors during emergencies. Users can dynamically group drones, assign each squad to distinct routes across the landscape, and adjust formation patterns on the fly, optimizing search-and-rescue missions and defense surveillance with intuitive gesture controls.
+      </p>
+      <p><a class="link" href="#" target="_blank" rel="noopener">Link to videos and final prototype file</a></p>
+      <div class="grid two">
+        <figure><img class="shot" src="images/swarm/terrain.png" alt="Terrain scenario with drones over a 3D map" />
+        <figcaption>Terrain scenario: 3D map based on Google Maps data</figcaption></figure>
+        <figure><img class="shot" src="images/swarm/building.png" alt="Building scenario hologram map" />
+        <figcaption>Building scenario: 3D interactive hologram map of the building</figcaption></figure>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><a class="link" href="https://www.behance.net/abhiramns" target="_blank" rel="noopener">View this project on Behance</a></p>
+    <p class="copy">&copy; 2025 Abhiram N S. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
