@@ -19,8 +19,12 @@
   <!-- Google Fonts: Sansation (Light 300, Regular 400, Bold 700) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- 
- <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+  <!-- If this URL differs for Sansation in your setup, replace it with the correct one -->
+
+  <!-- Adobe Fonts: Splash (replace XXXXXXX with your kit ID) -->
+  <link rel="stylesheet" href="https://use.typekit.net/hex5uwz.css">
+
   <!-- Site styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -33,29 +37,32 @@
   <nav class="navbar" data-behavior="hide-on-scroll">
     <a href="#publications">WORK</a>
     <a href="#about">ABOUT</a>
-    <a href="https://drive.google.com/file/d/169ZZR1uTuAt_i1yxt68OwHRhbPYs2HLa/view" target="_blank" rel="noopener">RESUME</a>
+    <a href="https://drive.google.com/file/d/1s3xO6o4phMTCPbnE_eT8UAJdw-MMJe8B/view" target="_blank" rel="noopener">RESUME</a>
   </nav>
 
   <main>
 
     <!-- Hero Section -->
-<header class="hero-section" id="top">
-  <canvas id="bg"></canvas>
-  <div class="hero-text-panel">
-    <h1 class="hero-heading-text">Hi, I am<br>Abhiram N S</h1>
-    <div class="hero-description-panel">
+    <header class="hero-section" id="top">
+      <canvas id="bg"></canvas>  <!-- New: Interactive background canvas -->
+
+      <!-- PNG heading (Papyrus-rendered image) -->
+      <!-- Replace src with your exported PNG for “Hi I am Abhiram N S” -->
+      <img src="Hi-I-am-Abhiram-N-S.png" alt="Hi I am Abhiram N S" class="hero-heading-image" />
+
+      <!-- Summary text (Sansation Light) -->
       <p class="hero-description">
         I design intuitive experiences that seamlessly connect user needs with the magic of technology, driven by curiosity and a passion for innovation
       </p>
-    </div>
-  </div>
-  <button class="scroll-indicator" aria-label="Scroll to publications" data-target="#publications">
-    <span class="hover-circle" aria-hidden="true"></span>
-    <svg class="arrow-down" width="20" height="40" viewBox="0 0 40 40" aria-hidden="true">
-      <path d="M20 2L20 38M20 38L38 20M20 38L2 20" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </button>
-</header>
+
+      <!-- Scroll-down circular button -->
+      <button class="scroll-indicator" aria-label="Scroll to publications" data-target="#publications">
+        <span class="hover-circle" aria-hidden="true"></span>
+        <svg class="arrow-down" width="20" height="40" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M20 2L20 38M20 38L38 20M20 38L2 20" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </header>
 
     <!-- Publications -->
     <section id="publications" class="publications-section" aria-labelledby="pub-title">
@@ -100,6 +107,21 @@
     <section id="projects" class="projects-wrap" aria-labelledby="projects-title">
       <h2 id="projects-title" class="section-title">PROJECTS</h2>
 
+           <!-- NEW Project (NDA): Content Left, Image Right -->
+      <article class="project-row project-right">
+        <div class="project-bg" aria-hidden="true"></div>
+        <div class="project-media">
+          <img src="NDAc.png" alt="NDA Project" class="project-image"/>
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Product Design - Under NDA</h3>
+          <p class="project-text">
+            A calm fitness, nutrition, and grocery companion for everyday adults. I worked across the product experience to make exercise, meal planning, grocery management, and progress tracking simple and sustainable. The project is under NDA, but I can share a private walkthrough of the design and process.
+          </p>
+          <!-- No "View Project" button because this project is under NDA -->
+        </div>
+      </article>
+
       <!-- Project 1: Image Left, Content Right -->
       <article class="project-row project-left">
         <div class="project-bg" aria-hidden="true"></div>
@@ -110,7 +132,8 @@
           <h3 class="project-title">Gesture-Based Swarm Control in VR</h3>
           <p class="project-text">
             Gesture-Based Swarm Control in VR leverages natural gestures to control aerial swarm robots in high-stakes scenarios like search-and-rescue. A user study identified preferred gestures, leading to a Unity-based prototype that enhances human-swarm interaction.
-          </p><a href="gesture-swarm.html" class="project-btn">View Project</a>
+          </p>
+          <a href="https://drive.google.com/file/d/1faJW_tohgzgXIy-0iKxuGavquxiDUy2W/view?usp=sharing" class="project-btn" target="_blank" rel="noopener">View Project</a>
         </div>
       </article>
 
@@ -203,9 +226,7 @@
     </section>
 
   </main>
-</script>
- 
-  
+
 
   <!-- Navbar show/hide & scroll helpers -->
   <script>
@@ -266,105 +287,241 @@
       // Init state
       nav.classList.add('nav-top');
     })();
+   
+// Removed circle triangle animation from here
+   
+  </script>
 
-    
+  <!-- New: Interactive background script for hero section -->
+  <script>
 
-<script>
-    const NUM_PARTICLES = 70;
-    const PARTICLE_SIZE_MIN = 1;
-    const PARTICLE_SIZE_MAX = 3;
-    const PARTICLE_SPEED = 0.08;
-    const CONNECTION_DISTANCE = 75;
-    const MOUSE_CONNECTION_DISTANCE = 110;
-    const REPEL_DISTANCE = 120;
-    const REPEL_STRENGTH = 0.5;
-    const GLOW_BLUR = 10;
-    const LINE_WIDTH = 0.4;
-    const SPRING_STRENGTH = 0.004;
-    const DAMPING = 0.96;
-    const DRIFT_JITTER = 0.015; // constant gentle "alive" motion, independent of cursor
+   // NEW ADDITION
 
-    const NUM_BOKEH = 30;
-    const BOKEH_SIZE_MIN = 3;
-    const BOKEH_SIZE_MAX = 14;
-    const BOKEH_OPACITY = 0.05;
-    const BOKEH_SPEED = 0.04;
+const COLOR = '140, 200, 235'; // r, g, b
+   
+// ---- Mobile detection (phones get a subtler version) ----
+const IS_MOBILE = window.matchMedia('(max-width: 768px)').matches;
+const M = (mobile, desktop) => IS_MOBILE ? mobile : desktop;
+
+const NUM_PARTICLES = M(45, 150);
+const PARTICLE_SIZE_MIN = M(0.8, 1);
+const PARTICLE_SIZE_MAX = M(2.2, 4);
+const PARTICLE_SPEED = 0.1;
+const CONNECTION_DISTANCE = M(70, 90);
+const MOUSE_CONNECTION_DISTANCE = M(110, 150);
+const REPEL_DISTANCE = M(120, 180);
+const REPEL_STRENGTH = M(0.5, 0.6);
+const GLOW_BLUR = M(5, 8);
+const LINE_WIDTH = M(0.4, 0.5);
+const SPRING_STRENGTH = 0.005;
+const DAMPING = 0.95;
+
+const NUM_BOKEH = M(10, 50);
+const BOKEH_SIZE_MIN = M(2, 3);
+const BOKEH_SIZE_MAX = M(8, 15);
+const BOKEH_OPACITY = M(0.03, 0.04);
+const BOKEH_SPEED = 0.05;
+
+const BASE_DENSITY = M(0.001, 0.005);   // near-zero = almost empty middle on phones
+const FOCUS_AREAS = IS_MOBILE ? [
+    {centerX: 0.10, centerY: 0.95, radius: 0.60, densityMultiplier: 1},    // bottom-left: dense
+    {centerX: 0.30, centerY: 0.80, radius: 0.40, densityMultiplier: 0.5},  // fade toward center
+    {centerX: 1.00, centerY: 0.10, radius: 0.35, densityMultiplier: 0.25}  // top-right: sparse
+] : [
+    {centerX: 0.15, centerY: 0.95, radius: 0.3, densityMultiplier: 1},
+    {centerX: 0.35, centerY: 0.85, radius: 0.3, densityMultiplier: 0.75},
+    {centerX: 0.4, centerY: 0.5, radius: 0.3, densityMultiplier: 0.1},
+    {centerX: 0.65, centerY: 0.55, radius: 0.4, densityMultiplier: 0.1},
+    {centerX: 0.75, centerY: 0.35, radius: 0.2, densityMultiplier: 0.5},
+    {centerX: 1.0, centerY: 0.15, radius: 0.3, densityMultiplier: 1}
+];
+const MAX_DENSITY_ESTIMATE = BASE_DENSITY + FOCUS_AREAS.reduce((sum, area) => sum + area.densityMultiplier, 0);
 
     const canvas = document.getElementById('bg');
     const ctx = canvas.getContext('2d');
+    const heroSection = document.querySelector('.hero-section');
 
+    // Handle resize for hero section coverage
     function resizeCanvas() {
-        canvas.width = canvas.clientWidth;
-        canvas.height = canvas.clientHeight;
+        canvas.width = heroSection.clientWidth;
+        canvas.height = heroSection.clientHeight;
         initParticles();
     }
-    window.addEventListener('resize', resizeCanvas);
+   
+    let lastWidth = window.innerWidth;
+window.addEventListener('resize', () => {
+    // Phones fire resize on scroll (address bar hides) - only rebuild if width changed
+    if (window.innerWidth !== lastWidth) {
+        lastWidth = window.innerWidth;
+        resizeCanvas();
+    }
+});
 
     class Particle {
         constructor(x, y, isBokeh = false) {
-            this.x = x; this.y = y;
-            this.homeX = x; this.homeY = y;
+            this.x = x;
+            this.y = y;
+            this.homeX = this.x; // Original position to return to
+            this.homeY = this.y;
             this.vx = (Math.random() - 0.5) * (isBokeh ? BOKEH_SPEED : PARTICLE_SPEED);
             this.vy = (Math.random() - 0.5) * (isBokeh ? BOKEH_SPEED : PARTICLE_SPEED);
-            this.size = isBokeh
-                ? Math.random() * (BOKEH_SIZE_MAX - BOKEH_SIZE_MIN) + BOKEH_SIZE_MIN
+            this.size = isBokeh 
+                ? Math.random() * (BOKEH_SIZE_MAX - BOKEH_SIZE_MIN) + BOKEH_SIZE_MIN 
                 : Math.random() * (PARTICLE_SIZE_MAX - PARTICLE_SIZE_MIN) + PARTICLE_SIZE_MIN;
-            this.opacity = isBokeh ? BOKEH_OPACITY * (0.7 + Math.random() * 0.3) : 0.6 + Math.random() * 0.6;
+            this.opacity = isBokeh 
+                ? BOKEH_OPACITY * (0.7 + Math.random() * 0.3) // Varied opacity for bokeh
+                : 0.8 + Math.random() * 0.8; // Slight variation for natural feel
             this.isBokeh = isBokeh;
+
+         //NEW ADDITIONS
+         this.phase = Math.random() * Math.PI * 2;
+this.amp = isBokeh ? 20 : 12; // wave travel distance in px
         }
-        update() {
-            this.vx += (this.homeX - this.x) * SPRING_STRENGTH + (Math.random() - 0.5) * DRIFT_JITTER;
-            this.vy += (this.homeY - this.y) * SPRING_STRENGTH + (Math.random() - 0.5) * DRIFT_JITTER;
-            this.vx *= DAMPING; this.vy *= DAMPING;
-            this.x += this.vx; this.y += this.vy;
-        }
+
+
+ //NEW ADDITION
+update(t) {
+    // Gentle travelling wave: each particle orbits a moving target near its home
+    const wave = Math.sin(this.homeX * 0.006 + t * 0.0006) + Math.cos(this.homeY * 0.008 - t * 0.0005);
+    const targetX = this.homeX + Math.cos(wave + this.phase) * this.amp;
+    const targetY = this.homeY + Math.sin(wave * 1.3 + this.phase) * this.amp;
+
+    this.vx += (targetX - this.x) * SPRING_STRENGTH * 2;
+    this.vy += (targetY - this.y) * SPRING_STRENGTH * 2;
+    this.vx *= DAMPING;
+    this.vy *= DAMPING;
+    this.x += this.vx;
+    this.y += this.vy;
+
+    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+}
+
+
+     //NEW ADDITION
         draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(173, 216, 230, ${this.opacity})`;
-            ctx.shadowColor = 'rgba(173, 216, 230, 0.7)';
-            ctx.shadowBlur = this.isBokeh ? GLOW_BLUR * 2 : GLOW_BLUR;
-            ctx.fill();
-            ctx.shadowBlur = 0;
+    // 0 = smallest circle, 1 = biggest (only used for bokeh)
+    const s = this.isBokeh ? (this.size - BOKEH_SIZE_MIN) / (BOKEH_SIZE_MAX - BOKEH_SIZE_MIN) : 0;
+    const fade = 1 - 0.35 * s;   // biggest circles are 35% dimmer. Try 0.2 for a subtler difference
+
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(173, 216, 230, ${this.opacity * fade})`;
+    ctx.shadowColor = `rgba(173, 216, 230, ${0.8 * fade})`;
+    ctx.shadowBlur = (this.isBokeh ? GLOW_BLUR * 2 : GLOW_BLUR) * fade;
+    ctx.fill();
+    ctx.shadowBlur = 0;
+}
+
+    } //class particle ends here
+
+    let particles = [];
+    let bokehParticles = [];
+
+    function generateParticles(array, num, isBokeh) {
+        array.length = 0; // Clear existing
+        let attempts = 0;
+        const maxAttempts = num * 100; // Safety to prevent infinite loop if misconfigured
+        while (array.length < num && attempts < maxAttempts) {
+            attempts++;
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * canvas.height;
+            let density = BASE_DENSITY;
+            FOCUS_AREAS.forEach(focus => {
+                const fx = focus.centerX * canvas.width;
+                const fy = focus.centerY * canvas.height;
+                const fr = focus.radius * Math.min(canvas.width, canvas.height);
+                const dx = x - fx;
+                const dy = y - fy;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < fr) {
+                    density += focus.densityMultiplier * (1 - dist / fr); // Linear falloff for smoother density transition
+                }
+            });
+            if (Math.random() < density / MAX_DENSITY_ESTIMATE) {
+                array.push(new Particle(x, y, isBokeh));
+            }
         }
     }
 
-    let particles = [], bokehParticles = [];
-    function generateParticles(arr, num, isBokeh) {
-        arr.length = 0;
-        for (let i = 0; i < num; i++) {
-            arr.push(new Particle(Math.random() * canvas.width, Math.random() * canvas.height, isBokeh));
-        }
-    }
     function initParticles() {
         generateParticles(particles, NUM_PARTICLES, false);
         generateParticles(bokehParticles, NUM_BOKEH, true);
     }
-    resizeCanvas();
 
-    let mouse = { x: undefined, y: undefined };
-    window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
-    window.addEventListener('touchmove', (e) => { if (e.touches.length) { mouse.x = e.touches[0].clientX; mouse.y = e.touches[0].clientY; } });
-    window.addEventListener('mouseleave', () => { mouse.x = undefined; mouse.y = undefined; });
-    window.addEventListener('touchend', () => { mouse.x = undefined; mouse.y = undefined; });
+    resizeCanvas(); // Initial setup
 
-    function animate() {
+let mouse = { x: undefined, y: undefined };
+   
+   let touchTimer;
+function setPointer(x, y) {
+    clearTimeout(touchTimer);
+    mouse.x = x;
+    mouse.y = y;
+}
+window.addEventListener('mousemove', (e) => setPointer(e.clientX, e.clientY));
+
+['touchstart', 'touchmove'].forEach(evt =>
+    window.addEventListener(evt, (e) => {
+        if (e.touches.length > 0) setPointer(e.touches[0].clientX, e.touches[0].clientY);
+    }, { passive: true })
+);
+
+window.addEventListener('mouseleave', () => { mouse.x = undefined; mouse.y = undefined; });
+window.addEventListener('touchend', () => {
+    // Let the effect linger briefly after the finger lifts, then clear
+    touchTimer = setTimeout(() => { mouse.x = undefined; mouse.y = undefined; }, 600);
+});
+   
+    function animate(t = 0) {
         requestAnimationFrame(animate);
-        const cx = canvas.width / 2, cy = canvas.height / 2;
-        const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.hypot(cx, cy));
-        grad.addColorStop(0, '#031525');
-        grad.addColorStop(1, '#02060c');
-        ctx.fillStyle = grad;
+        // Radial gradient background with light center, overall darker
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const maxRadius = Math.hypot(centerX, centerY);
+        const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, maxRadius);
+       // OLD gradient.addColorStop(0, '#00273A'); // Light center (relative to darker outer)
+      // OLD gradient.addColorStop(1, '#030914'); // Darker outer for overall darker feel
+
+gradient.addColorStop(0, '#01131F');
+gradient.addColorStop(1, '#02060C');
+     
+        ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        bokehParticles.forEach(p => { p.update(); p.draw(); });
 
+     //NEW ADDITION
+if (mouse.x !== undefined) {
+    const r = canvas.getBoundingClientRect();
+    const mx = mouse.x - r.left, my = mouse.y - r.top;
+    const glow = ctx.createRadialGradient(mx, my, 0, mx, my, 450);
+    glow.addColorStop(0, 'rgba(90, 170, 220, 0.05)');
+    glow.addColorStop(0.5, 'rgba(90, 170, 220, 0.02)');
+    glow.addColorStop(1, 'rgba(90, 170, 220, 0)');
+    ctx.fillStyle = glow;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+     
+        // Update and draw bokeh for atmosphere first (background layer)
+        bokehParticles.forEach((p) => {
+            p.update(t);
+            p.draw();
+        });
+
+        // Draw connections between particles (spider web effect)
         for (let i = 0; i < particles.length; i++) {
             for (let j = i + 1; j < particles.length; j++) {
-                const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
                 if (dist < CONNECTION_DISTANCE) {
-                    ctx.strokeStyle = `rgba(173, 216, 230, ${(1 - dist / CONNECTION_DISTANCE) * 0.3})`;
+                    // Opacity increases as particles get closer (natural forming effect)
+                    
+                 //NEW ADDITION
+                 const shimmer = 0.75 + 0.25 * Math.sin(t * 0.001 + (particles[i].x + particles[i].y) * 0.01);
+const opacity = (1 - dist / CONNECTION_DISTANCE) * 0.5 * shimmer;
+                 
+                    ctx.strokeStyle = `rgba(${COLOR}, ${opacity})`;
                     ctx.lineWidth = LINE_WIDTH;
                     ctx.beginPath();
                     ctx.moveTo(particles[i].x, particles[i].y);
@@ -373,31 +530,53 @@
                 }
             }
         }
-        particles.forEach(p => { p.update(); p.draw(); });
 
-        if (mouse.x !== undefined) {
+        // Update and draw particles (foreground droplets with glow)
+        particles.forEach((p) => {
+            p.update(t);
+            p.draw();
+        });
+
+        // Interactions if mouse/touch is active
+        if (mouse.x !== undefined && mouse.y !== undefined) {
             const rect = canvas.getBoundingClientRect();
-            const mx = mouse.x - rect.left, my = mouse.y - rect.top;
-            particles.forEach(p => {
-                const dx = p.x - mx, dy = p.y - my;
+            const mouseXRel = mouse.x - rect.left;
+            const mouseYRel = mouse.y - rect.top;
+
+            // Repel particles by adding to velocity (for damped, smooth response)
+            particles.forEach((p) => {
+                const dx = p.x - mouseXRel;
+                const dy = p.y - mouseYRel;
                 const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < REPEL_DISTANCE && dist > 0) {
+                if (dist < REPEL_DISTANCE && dist > 0) { // Avoid div by zero
                     const angle = Math.atan2(dy, dx);
                     const force = (1 - dist / REPEL_DISTANCE) * REPEL_STRENGTH;
-                    p.vx += Math.cos(angle) * force; p.vy += Math.sin(angle) * force;
+                    p.vx += Math.cos(angle) * force;
+                    p.vy += Math.sin(angle) * force;
                 }
+            });
+
+            // Temporary connections to cursor (with gradual opacity based on distance)
+            particles.forEach((p) => {
+                const dx = p.x - mouseXRel;
+                const dy = p.y - mouseYRel;
+                const dist = Math.sqrt(dx * dx + dy * dy);
                 if (dist < MOUSE_CONNECTION_DISTANCE) {
-                    ctx.strokeStyle = `rgba(173, 216, 230, ${(1 - dist / MOUSE_CONNECTION_DISTANCE) * 0.5})`;
+                    const opacity = (1 - dist / MOUSE_CONNECTION_DISTANCE) * 0.8;
+                    ctx.strokeStyle = `rgba(${COLOR}, ${opacity})`;
                     ctx.lineWidth = LINE_WIDTH;
-                    ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(mx, my); ctx.stroke();
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(mouseXRel, mouseYRel);
+                    ctx.stroke();
                 }
             });
         }
     }
+
     animate();
-</script>
+  </script>
 
-
-
+  
 </body>
 </html>
